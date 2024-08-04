@@ -15,9 +15,9 @@ python '$__tool_directory__/ui/egapx.py' '$yamlconfig' -e '$econfig' -o 'egapx_o
   <inputs>
     <param name="yamlconfig" type="data" optional="false" label="egapx configuration yaml file to execute" help="" format="yaml,txt" multiple="false"/>
     <param name="econfig" type="select" label="Workflow run configuration to suit the machine in use" help="Docker minimal will run the sample minimal dustmite yaml">
-      <option value="docker_minimal">Docker_minimal supports only the minimal dust mite example yaml using 6GB and 4 cores</option>
-      <option value="singularity">Singularity requires at least 128GB ram and 32 cores. 256GB and 64 cores recommended</option>
-      <option value="docker">Docker requires at least 128GB ram and 32 cores. 256GB and 64 cores recommended</option>
+      <option value="docker_minimal">Docker_minimal: supports only the minimal dust mite example yaml using 6GB and 4 cores</option>
+      <option value="singularity">Singularity: requires at least 128GB ram and 32 cores. 256GB and 64 cores recommended</option>
+      <option value="docker">Docker: requires at least 128GB ram and 32 cores. 256GB and 64 cores recommended</option>
     </param>
   </inputs>
   <outputs>
@@ -41,23 +41,31 @@ python '$__tool_directory__/ui/egapx.py' '$yamlconfig' -e '$econfig' -o 'egapx_o
 Galaxy tool wrapping the Eukaryotic Genome Annotation Pipeline (EGAPx)
 =================================================================================================
 
+.. class:: warningmark
+
 **Proof of concept: a quick hack to run a NF workflow inside a specialised Galaxy tool wrapper** 
 
-EGAPx is a big, complicated Nextflow workflow, challenging and costly to re-implement **properly**, requiring dozens of new tools and complicated ``groovy`` WF logic. 
+EGAPx is a big, complicated Nextflow workflow, challenging and costly to re-implement **properly**, requiring dozens of new tools and replicating a lot of 
+complicated *groovy* workflow logic. 
 
-It is also very new and in rapid development. Investing that effort and keeping it updated as EGAPx changes rapidly may be *inefficient of developer resources*. 
+It is also very new and in rapid development. Investing developer effort and keeping updated as EGAPx changes rapidly may be *inefficient of developer resources*. 
 
 This wrapper is designed to allow measuring how *inefficient* it is in terms of computing resource utilisation, in comparison to the developer effort 
 required to convert Nextflow DDL into tools and WF logic. Balancing these competing requirements is a fundamental Galaxy challenge.
 
 
-EGAPx requires huge resources to run with useful data. *128GB and 32 cores* are the minimum requirement; *256GB and 64 cores* are recommended. 
+EGAPx requires very substantial resources to run with real data. *128GB and 32 cores* are the minimum requirement; *256GB and 64 cores* are recommended. 
 
-There is a special test minimal example that can be run in 6GB with 4 cores.
+A special minimal example that can be run in 6GB with 4 cores is provided as a yaml configuration and is used for the tool test.
 
-In this implementation, the user can supply a yaml configuration file as initial proof of concept.
+In this implementation, the user must supply a yaml configuration file as initial proof of concept.
+History inputs and even a yaml editor might be provided in future. 
 
 The NF workflow to tool model tested here may be applicable to other NF workflows that take a single configuration yaml.
+
+.. class:: warningmark
+
+The computational resource cost of typing the wrong SRA identifiers into a tool form is potentially enormous with this tool!
 
 
 Sample yaml configurations
