@@ -1,0 +1,19 @@
+update help
+considering adding some prepackaged yaml options?
+currently point to samples in egapx github repo
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   .shed.yml
+#	new file:   EGAPXREADME.md
+#	modified:   README.md
+#	new file:   assets/default_task_params.yaml
+#	new file:   egapx_runner.xml
+#	new file:   static/images/Pipeline_sm_ncRNA_CAGE_80pct.png
+#	new file:   test-data/yamlconfig_sample
+#	modified:   ui/assets/config/executor/docker_minimal.config
+#
