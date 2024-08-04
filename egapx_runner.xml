@@ -14,10 +14,10 @@ cp  '$__tool_directory__/ui/assets/config/executor/$econfigfile' ./egapx_config/
 python '$__tool_directory__/ui/egapx.py' '$yamlconfig'  -e '$econfig' -o 'egapx_out']]></command>
   <inputs>
     <param name="yamlconfig" type="data" optional="false" label="egapx configuration yaml file to execute" help="" format="yaml,txt" multiple="false"/>
-    <param name="econfig" type="select" label="Configuration" help="">
-      <option value="docker_minimal">docker minimal only works for the minimal dust mite sample using 6GB and 4 cores</option>
-      <option value="singularity">singularity requires at least 128GB ram and 32 cores. 256GB and 64 cores recommendd</option>
-      <option value="docker">docker requires at least 128GB ram and 32 cores. 256GB and 64 cores recommend</option>
+    <param name="econfig" type="select" label="Workflow run configuration to suit the machine in use" help="Docker minimal will run the sample minimal dustmite yaml">
+      <option value="docker_minimal">Docker_minimal supports only the minimal dust mite example yaml using 6GB and 4 cores</option>
+      <option value="singularity">Singularity requires at least 128GB ram and 32 cores. 256GB and 64 cores recommended</option>
+      <option value="docker">Docker requires at least 128GB ram and 32 cores. 256GB and 64 cores recommended</option>
     </param>
   </inputs>
   <outputs>
