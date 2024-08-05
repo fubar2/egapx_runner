@@ -1,11 +1,14 @@
-<tool name="egapx_runner" id="egapx_runner" version="6.0.1" profile="22.05">
+<tool name="egapx_runner" id="egapx_runner" version="@TOOL_VERSION@" profile="22.05">
   <description>Runs egapx</description>
+  <macros>
+    <token name="@TOOL_VERSION@">0.02-alpha</token>
+  </macros>
   <requirements>
     <requirement version="3.12.3" type="package">python</requirement>
     <requirement version="24.04.4-0" type="package">nextflow</requirement>
     <requirement version="6.0.1" type="package">pyyaml</requirement>
   </requirements>
-  <version_command><![CDATA[echo "6.0.1"]]></version_command>
+  <version_command><![CDATA[echo "@TOOL_VERSION@"]]></version_command>
   <command><![CDATA[mkdir -p ./egapx_config &&
 #set econfigfile = $econfig + '.config'
 cp  '$__tool_directory__/ui/assets/config/executor/$econfigfile' ./egapx_config/ &&
@@ -73,8 +76,10 @@ YAML sample configurations can be uploaded into your Galaxy history from the `EG
 The simplest possible example is shown below - can be cut/paste into a history dataset in the upload tool.
 
 
-*./examples/input_D_farinae_small.yaml* is included in the examples linked above. RNA-seq data is provided as URI to the reads FASTA files.
-These FASTA files are a sampling of the reads from the complete SRA read files to expedite testing. 
+*./examples/input_D_farinae_small.yaml* is shown below and can be cut and pasted into the upload form to create a yaml file. 
+RNA-seq data is provided as URI to the reads FASTA files.
+
+input_D_farinae_small.yaml
 
 ::
 
@@ -87,7 +92,22 @@ These FASTA files are a sampling of the reads from the complete SRA read files t
     - https://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/data/Dermatophagoides_farinae_small/SRR9005248.2
 
 
+input_Gavia_stellata.yaml
 
+::
+
+  genome: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/030/936/135/GCF_030936135.1_bGavSte3.hap2/GCF_030936135.1_bGavSte3.hap2_genomic.fna.gz
+  reads: txid37040[Organism] AND biomol_transcript[properties] NOT SRS024887[Accession]
+  taxid: 37040
+
+input_C_longicornis.yaml
+
+::
+
+  genome: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/029//603/195/GCF_029603195.1_ASM2960319v2/GCF_029603195.1_ASM2960319v2_genomic.fna.gz
+  reads: txid2530218[Organism] AND biomol_transcript[properties] NOT SRS024887[Accession]
+  taxid: 2530218
+  
 Purpose
 ========
 
@@ -109,7 +129,8 @@ The current version is an alpha release with limited features and organism scope
 
 EGAPx is the publicly accessible version of the updated NCBI [Eukaryotic Genome Annotation Pipeline](https://www.ncbi.nlm.nih.gov/genome/annotation_euk/process/). 
 
-EGAPx takes an assembly fasta file, a taxid of the organism, and RNA-seq data. Based on the taxid, EGAPx will pick protein sets and HMM models. The pipeline runs `miniprot` to align protein sequences, and `STAR` to align RNA-seq to the assembly. Protein alignments and RNA-seq read alignments are then passed to `Gnomon` for gene prediction. In the first step of `Gnomon`, the short alignments are chained together into putative gene models. In the second step, these predictions are further supplemented by _ab-initio_ predictions based on HMM models. The final annotation for the input assembly is produced as a `gff` file. 
+EGAPx takes an assembly fasta file, a taxid of the organism, and RNA-seq data. Based on the taxid, EGAPx will pick protein sets and HMM models. The pipeline runs `miniprot` to align protein sequences, and `STAR` to align RNA-seq to the assembly. Protein alignments and RNA-seq read alignments are then passed to `Gnomon` for gene prediction. In the first step of `Gnomon`, the short alignments are chained together into putative gene models. 
+In the second step, these predictions are further supplemented by *ab-initio* predictions based on HMM models. The final annotation for the input assembly is produced as a `gff` file. 
 
 **Security Notice:**
 
