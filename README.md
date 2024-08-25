@@ -1,5 +1,10 @@
 # Galaxy tool wrapping the Eukaryotic Genome Annotation Pipeline - External (EGAPx) 
 
+### Please, do not use it for production. 
+It was written as a proof of concept, so might be a useful resource for other developers
+
+The production version developed from this prototype is here: https://github.com/richard-burhans/galaxytools/tree/main/tools/ncbi_egapx
+
 ## Notes about the tool
 This is a very simple and crude way to run the EGAPx workflow inside Galaxy.
 
