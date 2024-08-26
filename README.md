@@ -5,6 +5,10 @@ It was written as a proof of concept, so might be a useful resource for other de
 
 The production version developed from this prototype is here: https://github.com/richard-burhans/galaxytools/tree/main/tools/ncbi_egapx
 
+![image](https://github.com/user-attachments/assets/65ef814f-dfaa-4698-bbd0-dc8882555a98)
+
+#### Sample VGP TreeValGal JBrowse2 tracks for bCalStr4. Coverage at the top, then 4 NCBI annotation tracks with the EGAPx gff track at bottom. 
+
 ## Notes about the tool
 This is a very simple and crude way to run the EGAPx workflow inside Galaxy.
 
