@@ -9,7 +9,7 @@ The production version developed from this prototype is here: https://github.com
 
 #### Sample VGP TreeValGal JBrowse2 tracks for bColStr4. Coverage at the top, then 4 NCBI annotation tracks with the EGAPx gff track at bottom.
 *Note that the track above is the very, very similar looking NCBI protein track for this bird. It was generated from the same RNA-seq data in SRA, 
-using the existing main NCBI software that EGAPx represents. That similarity seems to confirm that the new workflow and the tool wrapping it seem to work well. 
+using the existing main NCBI software that EGAPx represents. That similarity seems to confirm that the new workflow and the tool wrapping it work well. 
 The tracks are not identical, but most differences are small. Not bad considering it's an alpha release...*
 
 
