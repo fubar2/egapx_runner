@@ -7,7 +7,11 @@ The production version developed from this prototype is here: https://github.com
 
 ![image](https://github.com/user-attachments/assets/65ef814f-dfaa-4698-bbd0-dc8882555a98)
 
-#### Sample VGP TreeValGal JBrowse2 tracks for bColStr4. Coverage at the top, then 4 NCBI annotation tracks with the EGAPx gff track at bottom. 
+#### Sample VGP TreeValGal JBrowse2 tracks for bColStr4. Coverage at the top, then 4 NCBI annotation tracks with the EGAPx gff track at bottom.
+*Note that the track above is the very, very similar looking NCBI protein track for this bird. It was generated from the same RNA-seq data in SRA, 
+using the existing main NCBI software that EGAPx represents. That similarity seems to confirm that the new workflow and the tool wrapping it seem to work well. 
+The tracks are not identical, but most differences are small. Not bad considering it's an alpha release...*
+
 
 ## Notes about the tool
 This is a very simple and crude way to run the EGAPx workflow inside Galaxy.
