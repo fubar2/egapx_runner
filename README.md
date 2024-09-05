@@ -31,7 +31,11 @@ This is not recommended for public deployment because of the resource demands.
 
 Note that this tool contains a clone of the egapx workflow repository because that's what it needs to run.
 
+
 ## Notes from the egapx documentation
+
+> [!NOTE]
+> Copied from the [EGAPx github](https://github.com/ncbi/egapx/) documentation
 
 EGAPx is the publicly accessible version of the updated NCBI [Eukaryotic Genome Annotation Pipeline](https://www.ncbi.nlm.nih.gov/genome/annotation_euk/process/). 
 
